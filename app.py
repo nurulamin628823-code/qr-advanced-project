@@ -10,14 +10,14 @@ BASE_DIR = os.path.dirname(__file__)
 DB_PATH = os.path.join(BASE_DIR, "data.db")
 
 # Load instance config if exists
-INSTANCE_CFG = os.path.join(BASE_DIR, "instance", "config.json")
-if not os.path.exists(INSTANCE_CFG):
-    # create default instance config
-    with open(INSTANCE_CFG, 'w') as f:
-        json.dump({"admin_user":"admin","admin_pass":"admin123"}, f)
-
-with open(INSTANCE_CFG, 'r') as f:
-    cfg = json.load(f)
+# INSTANCE_CFG = os.path.join(BASE_DIR, "instance", "config.json")
+# 
+# if not os.path.exists(INSTANCE_CFG):
+#     # app.config.from_json('instance/config.json')
+#     with open(INSTANCE_CFG, "w") as f:
+#         json.dump({"admin_user":"admin","admin_pass":"admin123"}, f)
+# with open(INSTANCE_CFG, "r") as f:
+#     cfg = json.load(f)
 
 app = Flask(__name__)
 app.secret_key = 'change-me-for-production'
